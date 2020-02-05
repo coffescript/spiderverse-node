@@ -1,0 +1,33 @@
+{
+  "name": "spiderverse-db",
+  "version": "1.0.0",
+  "description": "IoT Platform - DB Module",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coffescript/spiderverse-node.git"
+  },
+  "keywords": [
+    "iot",
+    "node",
+    "db",
+    "sequelize"
+  ],
+  "author": "Fabricio Mejia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coffescript/spiderverse-node/issues"
+  },
+  "homepage": "https://github.com/coffescript/spiderverse-node#readme",
+  "dependencies": {
+    "pg": "^7.18.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {
+    "standard": "^14.3.1"
+  }
+}
