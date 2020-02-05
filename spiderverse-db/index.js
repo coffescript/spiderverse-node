@@ -9,10 +9,14 @@ module.exports = async function (config) {
   const AgentModel = setupAgentModel(config)
   const MetricModel = setupMetricModel(config)
 
-  AgentModel.hastMany(MetricModel)
+  AgentModel.hasMany(MetricModel)
   MetricModel.belongsTo(AgentModel)
 
   await sequelize.authenticate()
+
+  if (config.setup) {
+    await sequelize.sync({ force: true })
+  }
 
   const Agent = {}
   const Metric = {}

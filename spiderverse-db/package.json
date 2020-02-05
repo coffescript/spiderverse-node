@@ -4,7 +4,8 @@
   "description": "IoT Platform - DB Module",
   "main": "index.js",
   "scripts": {
-    "lint": "standard"
+    "lint": "standard",
+    "setup": "DEBUG=spiderverse:* node ./setup.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/coffescript/spiderverse-node#readme",
   "dependencies": {
+    "debug": "^4.1.1",
     "pg": "^7.18.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.3"
