@@ -1,9 +1,26 @@
 'use strict'
 
-const db = require('./index')
 const debug = require('debug')('spiderverse:db:setup')
+const inquirer = require('inquirer')
+const chalk = require('chalk')
+const db = require('./index')
+
+const prompt = inquirer.createPromptModule()
 
 async function setup () {
+  
+  const answer = await prompt([
+    {
+      type: 'confirm',
+      name: 'setup',
+      message: 'This will destroy your database, are you sure?'
+    }
+  ])
+
+  if (!answer.setup) {
+    return console.log('Nothing happened :)')
+  }
+
   const config = {
     database: process.env.dbname || 'spiderverse_db',
     username: process.env.username || 'spiderverse' || 'dmr1204',
@@ -21,6 +38,7 @@ async function setup () {
 
 function handleFatalError (err) {
   console.error(err.message)
+  console.error(`${chalk.red('[fatal error]')} ${err.message}`)
   console.error(err.status)
   process.exit(1)
 }

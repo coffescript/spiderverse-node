@@ -24,12 +24,15 @@
   },
   "homepage": "https://github.com/coffescript/spiderverse-node#readme",
   "dependencies": {
+    "chalk": "^3.0.0",
     "debug": "^4.1.1",
+    "inquirer": "^7.0.4",
     "pg": "^7.18.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.3"
   },
   "devDependencies": {
+    "nyc": "^15.0.0",
     "standard": "^14.3.1"
   }
 }
